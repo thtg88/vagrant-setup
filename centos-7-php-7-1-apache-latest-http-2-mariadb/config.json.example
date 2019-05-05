@@ -1,0 +1,39 @@
+{
+    "forwarded_ports": [
+        {
+            "guest": 3306,
+            "host": 33068,
+            "name": "MariaDB"
+        },
+        {
+            "guest": 80,
+            "host": 8808,
+            "name": "HTTP"
+        },
+        {
+            "guest": 443,
+            "host": 8448,
+            "name": "HTTPS"
+        }
+    ],
+    "projects": [
+        {
+            "name": "api.acme.com",
+            "synced_folder": {
+                "guest": "/var/www/vhosts/api.acme.com",
+                "host": "~/Documents/web-projects/api.acme.com"
+            }
+        }
+    ],
+    "synced_folders": [
+        {
+            "guest": "/vagrant",
+            "host": ".",
+            "disabled": true
+        },
+        {
+            "guest": "/opt/library",
+            "host": "~/Documents/web-projects/library"
+        }
+    ]
+}
