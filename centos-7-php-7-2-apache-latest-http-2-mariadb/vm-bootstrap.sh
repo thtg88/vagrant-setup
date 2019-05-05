@@ -68,9 +68,27 @@ EOF
 sed -i 's"^SELINUX=.*$"SELINUX=disabled"' /etc/selinux/config
 # set system timezone
 timedatectl set-timezone Europe/London
+# Set MySQL's auto_increment_increment and auto_increment_offset to 2
+# to emulate the live server's behaviour
+sed -i 's"^\[mysqld\].*$"\[mysqld\]\nauto_increment_increment=2\nauto_increment_offset=2"' /etc/my.cnf
 # enable and start MariaDB service
 systemctl enable mariadb.service
 systemctl start mariadb.service
+# set MySQL root password
+sudo /usr/bin/mysqladmin -u root password 'root'
+# allow MySQL remote access (required to access from our private network host. Note that this is completely insecure if used in any other way)
+mysql -u root -proot -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION; FLUSH PRIVILEGES;"
+# allow MySQL remote access to somdes (required to access from our private network host. Note that this is completely insecure if used in any other way)
+mysql -u root -proot -e "GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' IDENTIFIED BY 'usersecret' WITH GRANT OPTION;"
+# drop the MySQL anonymous users
+mysql -u root -proot -e "DROP USER ''@'localhost';"
+mysql -u root -proot -e "DROP USER ''@'$(hostname)';"
+# drop the MySQL demo database
+mysql -u root -proot -e "DROP DATABASE test;"
+# reload MySQL privileges table
+mysql -u root -proot -e "FLUSH PRIVILEGES;"
+# enable and start MariaDB service
+systemctl restart mariadb.service
 # Configure number of processes for MongoDB
 sed -i 's"^mongod soft nproc.*$"mongod soft nproc 32000"' /etc/security/limits.d/20-nproc.conf
 # Enable & Start MongoDB
@@ -117,6 +135,5 @@ fi
 rm composer-setup.php
 # TODO
 #/opt/mssql/bin/mssql-conf setup
-#/usr/bin/mysql_secure_installation
 #composer global require "banago/phploy"
 #composer global require "laravel/installer"
