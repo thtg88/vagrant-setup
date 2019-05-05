@@ -1,7 +1,7 @@
 # Update CentOS packages
 yum update -y
 # Install bind-utils, patch, vim, wget, and epel-release
-yum install -y bind-utils patch vim wget epel-release net-tools zip unzip git
+yum install -y bind-utils patch vim nano wget epel-release net-tools zip unzip git
 # Fetch the remi repo
 wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 # Update repo packages
