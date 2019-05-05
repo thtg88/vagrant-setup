@@ -8,16 +8,16 @@ wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 yum --enablerepo=remi,remi-php56 update
 # Install Apache (httpd), MariaDB, NodeJS, and its extensions from the local repo
 yum --enablerepo=remi,remi-php56 install -y httpd mariadb-server nodejs
-# php-bcmath
 # Fetch the CentOS 7 official rpms
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 wget https://centos7.iuscommunity.org/ius-release.rpm
 # Install and upgrade the rpms just downloaded
 rpm -Uvh ius-release*.rpm
+rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 # Update CentOS packages
 yum -y update
 # Now that we have the official CentOS repo, install PHP 5.6 and its extensions
-yum -y install php56u php56u-opcache php56u-bcmath php56u-xml php56u-mcrypt php56u-gd php56u-devel php56u-mysql php56u-intl php56u-mbstring php56u-soap mod_ssl
+yum -y install php56w php56w-opcache php56w-bcmath php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-intl php56w-mbstring php56w-soap mod_ssl
 # Enable writing of PHP Session folder
 chmod -R 777 /var/lib/php/session
 # disable SELinux
