@@ -51,6 +51,7 @@ sed -i 's"^short_open_tag =.*$"short_open_tag = On"' /etc/opt/rh/rh-php72/php.in
 sed -i 's"^display_errors =.*$"display_errors = On"' /etc/opt/rh/rh-php72/php.ini
 # Set upload_max_filesize = 256M
 sed -i 's"^upload_max_filesize =.*$"upload_max_filesize = 256M"' /etc/opt/rh/rh-php72/php.ini
+sed -i 's"^post_max_size =.*$"post_max_size = 100M"' /etc/opt/rh/rh-php72/php.ini
 # Set date.timezone = Europe/London
 sed -i 's"^;date\.timezone =.*$"date.timezone = Europe/London"' /etc/opt/rh/rh-php72/php.ini
 # Set sendmail_path = /usr/sbin/ssmtp -t
