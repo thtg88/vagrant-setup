@@ -18,6 +18,8 @@ rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 yum -y update
 # Now that we have the official CentOS repo, install PHP 5.6 and its extensions
 yum -y install php56w php56w-opcache php56w-bcmath php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-intl php56w-mbstring php56w-soap mod_ssl
+mkdir /var/www/certificates
+mkdir -p /var/lib/php/session
 # Enable writing of PHP Session folder
 chmod -R 777 /var/lib/php/session
 # disable SELinux
