@@ -12,6 +12,9 @@ This collection of Vagrant configurations aims at gathering common development e
         - Basic HTTP configuration
         - Dynamic HTTPS self-signed certificate configuration
     - PHP 7.1 with latest Apache from CodeIT repo and MariaDB, together with HTTPS and HTTP/2 configuration out of the box
+    - PHP 7.2 with MariaDB, and HTTPS configuration
+        - Latest Apache from CodeIT repository, PHP-FPM, and together with HTTP/2 configuration out of the box
+        - Stock Apache, and PHP from Webtatic repository
 
 ## Requirements
 - Basic understanding of virtualization, networking, and VMs
