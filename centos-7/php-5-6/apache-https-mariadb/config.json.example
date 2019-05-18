@@ -18,6 +18,17 @@
     ],
     "projects": [
         {
+            "database": {
+                "backup": true,
+                "guest_folder": "/var/www/vhosts/api.acme.com/.mysql_backups",
+                "guest_database": {
+                    "name": "database_name",
+                    "user": {
+                        "username": "root",
+                        "password": "root"
+                    }
+                }
+            },
             "name": "api.acme.com",
             "synced_folder": {
                 "guest": "/var/www/vhosts/api.acme.com",
