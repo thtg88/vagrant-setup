@@ -18,6 +18,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/) (or at lea
 - Update Composer On Every Provision
 ### Changed
 - Isolate configuration in Ruby class
+
+## [2.2.2] - 2019-05-18
+### Changed
 - Use current directory instead of absolute one for scripts
 
 ## [2.2.1] - 2019-05-18
