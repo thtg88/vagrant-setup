@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/) (or at least it tries to).
 
+## Unreleased
+### Added
+- Choose PHP version
+- Choose provisioning script(s)
+- Choose box to provision
+- Clear vhosts (perhaps only unused ones)
+- Configure cron jobs
+- Copy database from remote server
+- Create database if it does not exist
+- Domain to /etc/hosts file on host machine (https://github.com/cogitatio/vagrant-hostsupdater)
+- Support for public and private SSH keys
+- Update Composer On Every Provision
+### Changed
+- Isolate configuration in Ruby class
+- Use current directory instead of absolute one for scripts
+
 ## [2.2.1] - 2019-05-18
 ### Changed
 - Error message about triggers
