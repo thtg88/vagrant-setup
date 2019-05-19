@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
 	# Enable provisioning with a shell script. Additional provisioners such as
 	# Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
 	# documentation for more information about their specific syntax and use.
-	config.vm.provision "shell", path: "~/Documents/server/vagrant-setup/centos-7/php-7-2/apache-latest-http-2-mariadb/vm-provision.sh"
+	config.vm.provision "shell", path: "~/Documents/server/vagrant-setup/centos-7/php-7-2/apache-latest-http-2-mariadb/scripts/vm-provision.sh"
 
 	# Share an additional folder to the guest VM. The first argument is
 	# the path on the host to the actual folder. The second argument is
@@ -96,7 +96,7 @@ Vagrant.configure("2") do |config|
 
 			if project.has_key?('name')
 				# Creates Apache configuration files and SSL config if N/A
-				config.vm.provision "shell", path: '~/Documents/server/vagrant-setup/centos-7/php-7-2/apache-latest-http-2-mariadb/apache-and-ssl-config.sh', run: "always" do |s|
+				config.vm.provision "shell", path: '~/Documents/server/vagrant-setup/centos-7/php-7-2/apache-latest-http-2-mariadb/scripts/apache-and-ssl-config.sh', run: "always" do |s|
 					s.args = [project['name']]
 				end
 			end
