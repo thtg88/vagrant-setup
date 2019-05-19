@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
 	# https://docs.vagrantup.com.
 
 	if Vagrant::VERSION < '2.1.0' && !Vagrant.has_plugin?('vagrant-triggers')
-		abort "You must have Vagrant version 2.1.0 or the vagrant-triggers plugin in order to proceed"
+		abort "You must have Vagrant version 2.1.0 or higher, or the vagrant-triggers plugin in order to proceed"
 	end
 
 	# Open JSON configuration file
