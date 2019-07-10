@@ -6,8 +6,8 @@ yum install -y bind-utils patch vim nano wget epel-release net-tools unzip zip g
 wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 # Update repo packages
 yum --enablerepo=remi,remi-php56 update
-# Install Apache (httpd), MariaDB, NodeJS, and its extensions from the local repo
-yum --enablerepo=remi,remi-php56 install -y httpd mariadb-server nodejs
+# Install Apache (httpd), MariaDB, and its extensions from the local repo
+yum --enablerepo=remi,remi-php56 install -y httpd mariadb-server
 # php-bcmath
 # Fetch the CentOS 7 official rpms
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm

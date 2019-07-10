@@ -7,8 +7,8 @@ yum install -y bind-utils patch nano vim wget epel-release zip unzip
 wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 # Update repo packages
 yum --enablerepo=remi,remi-php72 update
-# Install Apache (httpd), MariaDB, NodeJS, Git, and its extensions from the local repo
-yum --enablerepo=remi,remi-php72 install -y mariadb-server nodejs git
+# Install Apache (httpd), MariaDB, Git, and its extensions from the local repo
+yum --enablerepo=remi,remi-php72 install -y mariadb-server git
 # Fetch the CentOS 7 additional rpms
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 wget https://centos7.iuscommunity.org/ius-release.rpm

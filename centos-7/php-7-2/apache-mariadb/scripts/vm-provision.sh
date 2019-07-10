@@ -2,8 +2,8 @@
 yum update -y
 # Install bind-utils, patch, vim, wget, and epel-release
 yum install -y bind-utils patch vim nano wget epel-release net-tools zip unzip git
-# Install Apache (httpd), MariaDB, NodeJS, and its extensions from the local repo
-yum install -y httpd mariadb-server nodejs epel-release
+# Install Apache (httpd), MariaDB, and its extensions from the local repo
+yum install -y httpd mariadb-server epel-release
 # Install and upgrade the rpms just downloaded
 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 # Update CentOS packages
