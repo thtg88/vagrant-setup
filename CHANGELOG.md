@@ -19,11 +19,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/) (or at lea
 ### Changed
 - Isolate configuration in Ruby class
 
-## [2.2.2] - 2019-05-18
+## [3.0.0] - 2019-07-10
+### Removed
+- Support for CentOS's default NodeJS installation (v6.x)
+
+## [2.2.2] - 2019-05-19
 ### Changed
 - Use current directory instead of absolute one for scripts
 
-## [2.2.1] - 2019-05-18
+## [2.2.1] - 2019-05-19
 ### Changed
 - Error message about triggers
 
