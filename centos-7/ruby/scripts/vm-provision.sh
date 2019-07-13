@@ -34,6 +34,20 @@ mysql -u root -proot -e "DROP DATABASE test;"
 mysql -u root -proot -e "FLUSH PRIVILEGES;"
 # enable and start MariaDB service
 systemctl restart mariadb.service
+# Set ServerName vagrant.localhost
+sed -i 's"^#ServerName .*$"ServerName vagrant.localhost"' /etc/httpd/conf/httpd.conf
+# configure Apache
+mkdir /etc/httpd/sites-available
+mkdir /etc/httpd/sites-enabled
+# Configure Apache to run as the vagrant user
+sed -i 's"^User .*$"User vagrant"' /etc/httpd/conf/httpd.conf
+# Configure Apache to run as the vagrant group
+sed -i 's"^Group .*$"Group vagrant"' /etc/httpd/conf/httpd.conf
+echo >> /etc/httpd/conf/httpd.conf
+echo Include /etc/httpd/sites-enabled/ >> /etc/httpd/conf/httpd.conf
+# enable and start Apache services
+systemctl enable httpd.service
+systemctl start httpd.service
 # Enable EPEL repo
 yum-config-manager --enable epel
 yum clean all && sudo yum update -y
@@ -43,4 +57,4 @@ yum install -y pygpgme curl
 curl --fail -sSLo /etc/yum.repos.d/passenger.repo https://oss-binaries.phusionpassenger.com/yum/definitions/el-passenger.repo
 # Install Passenger + Apache module
 yum install -y mod_passenger || sudo yum-config-manager --enable cr && sudo yum install -y mod_passenger
-systemctl restart httpd
+systemctl restart httpd.service
