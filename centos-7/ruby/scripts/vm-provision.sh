@@ -57,4 +57,6 @@ yum install -y pygpgme curl
 curl --fail -sSLo /etc/yum.repos.d/passenger.repo https://oss-binaries.phusionpassenger.com/yum/definitions/el-passenger.repo
 # Install Passenger + Apache module
 yum install -y mod_passenger || sudo yum-config-manager --enable cr && sudo yum install -y mod_passenger
+# Configuring Passenger to point to RVM version of Ruby
+sed -i 's"PassengerRuby .*$"PassengerRuby /home/vagrant/.rvm/rubies/ruby-2.6.3/bin/ruby"' /etc/httpd/conf.d/passenger.conf
 systemctl restart httpd.service
