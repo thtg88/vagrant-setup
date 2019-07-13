@@ -18,7 +18,6 @@ then
     DirectoryIndex index.php index.html
 </VirtualHost>
 <VirtualHost *:443>
-    Protocols h2 http/1.1
     DocumentRoot "/var/www/vhosts/$1"
     ServerName $1.localhost
     <Directory "/var/www/vhosts/$1">
@@ -31,7 +30,6 @@ then
     </Directory>
     IndexOptions
     DirectoryIndex index.php index.html
-    ProxyPassMatch ^/(.*\.php)$ fcgi://127.0.0.1:9000/var/www/vhosts/$1/\$1
     SSLEngine on
     SSLCertificateFile "/var/www/certificates/$1.localhost.crt"
     SSLCertificateKeyFile "/var/www/certificates/$1.localhost.key"
