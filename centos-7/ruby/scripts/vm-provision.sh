@@ -4,7 +4,7 @@ yum update -y
 # Install bind-utils, patch, vim, wget, and epel-release
 yum install -y yum-utils bind-utils patch vim nano wget epel-release net-tools zip unzip git
 # Install Apache (httpd), MariaDB, and its extensions from the local repo
-yum install -y httpd httpd-devel mariadb-server epel-release
+yum install -y httpd httpd-devel mariadb-server epel-release mod_ssl
 # Update CentOS packages
 yum -y update
 mkdir -p /var/www/certificates
