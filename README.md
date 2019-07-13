@@ -15,6 +15,7 @@ This collection of Vagrant configurations aims at gathering common development e
     - PHP 7.2 with MariaDB, and HTTPS configuration
         - Latest Apache from [CodeIT](https://repo.codeit.guru/packages/centos/7/x86_64/) repository, PHP-FPM, and together with HTTP/2 configuration out of the box
         - Stock Apache, and PHP from [Webtatic](https://webtatic.com/packages/php72/) repository
+    - Ruby: Ruby 2.6.3 with RVM latest stable, together with Rails, Apache and MariaDB. The Passenger Apache module is used to serve Ruby apps.
 
 ## Requirements
 - Basic understanding of virtualization, networking, and VMs
