@@ -57,4 +57,6 @@ yum install -y passenger-devel-6.0.2
 systemctl restart httpd.service
 # Configuring Passenger to point to RVM version of Ruby
 sed -i 's"PassengerRuby .*$"PassengerRuby /usr/local/rvm/rubies/ruby-2.6.3/bin/ruby"' /etc/httpd/conf.d/passenger.conf
-echo "<IfModule mod_passenger.c>PassengerAppEnv development</IfModule>" >> /etc/httpd/conf.d/passenger.conf
+echo "<IfModule mod_passenger.c>
+    PassengerAppEnv development
+</IfModule>" >> /etc/httpd/conf.d/passenger.conf
