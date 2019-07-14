@@ -19,6 +19,31 @@ and this project adheres to [Semantic Versioning](http://semver.org/) (or at lea
 ### Changed
 - Isolate configuration in Ruby class
 
+## [3.1.3] - 2019-07-14
+### Fixed
+- **[Ruby]**: Passenger configuration for development environment
+### Removed
+- **[Ruby]**: MariaDB support
+
+## [3.1.2] - 2019-07-14
+### Changed
+- **[Ruby]**: Now Ruby is installed globally
+- **[Ruby]**: General improvements and bug fixes
+
+## [3.1.1] - 2019-07-14
+### Added
+- **[Ruby]**: mod_ssl to Ruby VM provisioning
+### Changed
+- **[Ruby]**: Locked version installed to 2.6.3
+### Fixed
+- **[Ruby]**: Passenger configuration
+### Removed
+- **[Ruby]**: Apache HTTP/2 support
+
+## [3.1.0] - 2019-07-14
+### Added
+- **[Ruby]**: Basic Ruby configuration with RVM and Rails support
+
 ## [3.0.0] - 2019-07-10
 ### Removed
 - Support for CentOS's default NodeJS installation (v6.x)
