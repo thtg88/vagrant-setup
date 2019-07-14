@@ -48,6 +48,15 @@ echo Include /etc/httpd/sites-enabled/ >> /etc/httpd/conf/httpd.conf
 # enable and start Apache services
 systemctl enable httpd.service
 systemctl start httpd.service
+# Download RVM keys
+gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+# Download RVM
+curl -sSL https://get.rvm.io | bash -s stable
+source /usr/local/rvm/scripts/rvm || source /etc/profile.d/rvm.sh
+rvm use --default --install 2.6.3
+gem install bundler
+gem install rails
+rvm cleanup all
 # Enable EPEL repo
 yum-config-manager --enable epel
 yum clean all && sudo yum update -y
