@@ -52,9 +52,6 @@ Vagrant.configure("2") do |config|
 	# documentation for more information about their specific syntax and use.
 	config.vm.provision "shell", path: scripts_dir+"/scripts/vm-provision.sh"
 
-	config.vm.provision "shell", path: scripts_dir+"/scripts/install-rvm-and-ruby-and-rails.sh",
-		args: "2.6.3", privileged: false
-
 	# Share an additional folder to the guest VM. The first argument is
 	# the path on the host to the actual folder. The second argument is
 	# the path on the guest to mount the folder. And the optional third

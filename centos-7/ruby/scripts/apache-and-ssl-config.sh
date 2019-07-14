@@ -4,9 +4,9 @@ then
     # Create .conf file
     cat > /etc/httpd/sites-available/$1.conf <<EOF
 <VirtualHost *:80>
-    DocumentRoot "/var/www/vhosts/$1"
+    DocumentRoot "/var/www/vhosts/$1/public"
     ServerName $1.localhost
-    <Directory "/var/www/vhosts/$1">
+    <Directory "/var/www/vhosts/$1/public">
         Options -Indexes +FollowSymLinks +MultiViews
         AllowOverride All
         Order allow,deny
@@ -18,9 +18,9 @@ then
     DirectoryIndex index.php index.html
 </VirtualHost>
 <VirtualHost *:443>
-    DocumentRoot "/var/www/vhosts/$1"
+    DocumentRoot "/var/www/vhosts/$1/public"
     ServerName $1.localhost
-    <Directory "/var/www/vhosts/$1">
+    <Directory "/var/www/vhosts/$1/public">
         Options -Indexes +FollowSymLinks +MultiViews
         AllowOverride All
         Order allow,deny
