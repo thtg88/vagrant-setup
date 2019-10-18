@@ -19,6 +19,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/) (or at lea
 ### Changed
 - Isolate configuration in Ruby class
 
+## [3.2.1] - 2019-10-18
+### Fixed
+- **[PHP]**: Database backup setup for 5.6 HTTPS configuration
+
 ## [3.2.0] - 2019-10-18
 ### Added
 - **[PHP]**: 5.4 setup (with HTTPS)
