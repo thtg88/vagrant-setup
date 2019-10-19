@@ -9,6 +9,7 @@ This collection of Vagrant configurations aims at gathering common development e
 ## Contained in this repository
 - CentOS 7
     - PHP 5.4 with stock Apache, MariaDB, and HTTPS configuration
+    - PHP 5.5 with stock Apache, MariaDB, and HTTPS configuration
     - PHP 5.6 with stock Apache and MariaDB
         - Basic HTTP configuration
         - Dynamic HTTPS self-signed certificate configuration

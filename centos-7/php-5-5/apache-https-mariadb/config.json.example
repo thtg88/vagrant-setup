@@ -1,0 +1,50 @@
+{
+    "forwarded_ports": [
+        {
+            "guest": 3306,
+            "host": 33068,
+            "name": "MariaDB"
+        },
+        {
+            "guest": 80,
+            "host": 8808,
+            "name": "HTTP"
+        },
+        {
+            "guest": 443,
+            "host": 8448,
+            "name": "HTTPS"
+        }
+    ],
+    "projects": [
+        {
+            "database": {
+                "backup": true,
+                "guest_folder": "/var/www/vhosts/api.acme.com/.mysql_backups",
+                "guest_database": {
+                    "name": "database_name",
+                    "user": {
+                        "username": "root",
+                        "password": "root"
+                    }
+                }
+            },
+            "name": "api.acme.com",
+            "synced_folder": {
+                "guest": "/var/www/vhosts/api.acme.com",
+                "host": "~/Documents/web-projects/api.acme.com"
+            }
+        }
+    ],
+    "synced_folders": [
+        {
+            "guest": "/vagrant",
+            "host": ".",
+            "disabled": true
+        },
+        {
+            "guest": "/opt/library",
+            "host": "~/Documents/web-projects/library"
+        }
+    ]
+}
