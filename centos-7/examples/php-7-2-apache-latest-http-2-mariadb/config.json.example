@@ -36,6 +36,17 @@
             }
         }
     ],
+    "project_scripts": [
+        "apache/vhost/http-2-php-fpm.sh",
+        "apache/vhost/ssl-certificate.sh"
+    ],
+    "provision_scripts": [
+        "base.sh",
+        "apache/http-2.sh",
+        "php/fpm-7-2.sh",
+        "php/composer.sh",
+        "mariadb.sh"
+    ],
     "synced_folders": [
         {
             "guest": "/vagrant",
