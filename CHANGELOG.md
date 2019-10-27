@@ -6,18 +6,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/) (or at lea
 
 ## Unreleased
 ### Added
-- Choose PHP version
-- Choose provisioning script(s)
 - Choose box to provision
-- Clear vhosts (perhaps only unused ones)
+- Clear unused vhosts
 - Configure cron jobs
 - Copy database from remote server
 - Create database if it does not exist
 - Domain to /etc/hosts file on host machine (https://github.com/cogitatio/vagrant-hostsupdater)
 - Support for public and private SSH keys
-- Update Composer On Every Provision
+### Removed
+- `mod_ssl` in HTTP-only configuration
+
+## [4.0.0] - 2019-10-27
+### Added
+- `Setup` class to re-use configuration
+- Specific scripts for all projects
 ### Changed
-- Isolate configuration in Ruby class
+- Composability of scripts to build your own machine
+- Moved existing machines under the `examples` folder
 
 ## [3.3.0] - 2019-10-19
 ### Added
