@@ -2,12 +2,12 @@
     "forwarded_ports": [
         {
             "guest": 3306,
-            "host": 33068,
+            "host": 33060,
             "name": "MariaDB"
         },
         {
             "guest": 80,
-            "host": 8808,
+            "host": 8800,
             "name": "HTTP"
         }
     ],
