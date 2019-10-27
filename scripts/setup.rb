@@ -2,7 +2,7 @@
 class Setup
     def self.configure(config, settings)
         # Configure Local Variable To Access Scripts
-        scripts_dir = File.expand_path(File.dirname(__FILE__)) + '/scripts'
+        scripts_dir = File.expand_path(File.dirname(__FILE__))
 
         # Every Vagrant development environment requires a box. You can search for
     	# boxes at https://atlas.hashicorp.com/search.
