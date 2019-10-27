@@ -9,11 +9,6 @@
             "guest": 80,
             "host": 8808,
             "name": "HTTP"
-        },
-        {
-            "guest": 443,
-            "host": 8448,
-            "name": "HTTPS"
         }
     ],
     "projects": [
