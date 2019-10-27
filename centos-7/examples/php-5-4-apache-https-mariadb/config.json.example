@@ -36,6 +36,13 @@
             }
         }
     ],
+    "provision_scripts": [
+        "base.sh",
+        "apache/apache.sh",
+        "php/5-4.sh",
+        "php/composer.sh",
+        "mariadb.sh"
+    ],
     "synced_folders": [
         {
             "guest": "/vagrant",
