@@ -50,16 +50,13 @@ class Setup
     				config.vm.synced_folder project['synced_folder']['host'], project['synced_folder']['guest']
     			end
 
-    			if project.has_key?('name')
-    				# Creates Apache configuration files if N/A
-    				config.vm.provision "shell", path: scripts_dir+'/apache/vhost/http-https.sh', run: "always" do |s|
-    					s.args = [project['name']]
-    				end
-
-    				# Creates SSL config if N/A
-    				config.vm.provision "shell", path: scripts_dir+'/apache/vhost/ssl-certificate.sh', run: "always" do |s|
-    					s.args = [project['name']]
-    				end
+    			if project.has_key?('name') && settings.has_key?('project_scripts')
+                    settings['project_scripts'].each do |script|
+                        # Creates Apache configuration files if N/A
+        				config.vm.provision "shell", path: scripts_dir+'/'+script, run: "always" do |s|
+        					s.args = [project['name']]
+        				end
+                    end
     			end
 
                 # Database backup configuration

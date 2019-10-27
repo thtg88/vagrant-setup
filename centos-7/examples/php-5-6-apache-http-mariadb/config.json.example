@@ -31,6 +31,9 @@
             }
         }
     ],
+    "project_scripts": [
+        "apache/vhost/http.sh"
+    ],
     "provision_scripts": [
         "base.sh",
         "apache/apache.sh",

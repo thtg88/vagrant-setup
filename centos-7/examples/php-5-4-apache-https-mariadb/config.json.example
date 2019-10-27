@@ -36,6 +36,10 @@
             }
         }
     ],
+    "project_scripts": [
+        "apache/vhost/http-https.sh",
+        "apache/vhost/ssl-certificate.sh"
+    ],
     "provision_scripts": [
         "base.sh",
         "apache/apache.sh",
