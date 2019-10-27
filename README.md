@@ -11,15 +11,15 @@ This repository provides a set of scripts to construct a local Vagrant developme
 - [Configuration](#configuration)
     - [`forwarded_ports`](#forwarded_ports)
         - [`database` Backup Configuration](#database-backup-configuration)
-        - [`synced_folder` Configuration](#synced-folder-configuration)
+        - [`synced_folder` Configuration](#synced_folder-configuration)
         - Example
     - [`projects`](#projects)
         - Example
-    - [`project_scripts`](#project-scripts)
+    - [`project_scripts`](#project_scripts)
         - Example
-    - [`provision_scripts`](#provision-scripts)
+    - [`provision_scripts`](#provision_scripts)
         - Example
-    - [`synced_folders`](#synced-folders)
+    - [`synced_folders`](#synced_folders)
         - Example
 
 ## Requirements
@@ -128,7 +128,7 @@ It must be an array of objects, each with the following attributes:
 | --------------- | --------- | --------- | ----------- |
 | `database`      | `object`  | No        | A configuration object for the database associated to the project. If configured, will allow to backup the project's database once the VM gets destroyed via `vagrant destroy`. See [`database` backup configuration](#database-backup-configuration). |
 | `name`          | `string`  | Yes       | The name of the project. Must be the name of the folder, if using a web server to serve the project from it. |
-| `synced_folder` | `object`  | Yes       | A configuration object mapping folders from the host machine to the guest one. See [`synced_folder` configuration](#synced-folder-configuration). |
+| `synced_folder` | `object`  | Yes       | A configuration object mapping folders from the host machine to the guest one. See [`synced_folder` configuration](#synced_folder-configuration). |
 
 #### `database` Backup Configuration
 
