@@ -36,6 +36,15 @@
             }
         }
     ],
+    "project_scripts": [
+        "apache/vhost/http-https.sh",
+        "apache/vhost/ssl-certificate.sh"
+    ],
+    "provision_scripts": [
+        "base.sh",
+        "apache/apache-passenger.sh",
+        "ruby/ruby.sh"
+    ],
     "synced_folders": [
         {
             "guest": "/vagrant",
