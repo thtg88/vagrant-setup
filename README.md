@@ -24,27 +24,30 @@ This repository provides a set of scripts to construct a local Vagrant developme
 
 ## Requirements
 - Basic understanding of virtualization, networking, and VMs;
-- [VirtualBox](https://www.virtualbox.org/) >=5.2. While this setup may work with other hypervisors, it has not been tested against them and support is not provided for them;
 - [Vagrant](https://www.vagrantup.com/downloads.html) >=2.2.0
+- [VirtualBox](https://www.virtualbox.org/) >=5.2. While this setup may work with other hypervisors, it has not been tested against them and support is not provided for them;
 
 ## Technologies Provided
-This repository provides support for the following technologies in a `CentOS 7` distribution:
+This repository provides support for the following technologies via a [provisioning shell script](#provision_scripts) in a `CentOS 7` distribution:
 
-- Apache: stock version from `CentOS 7` repository;
-- Apache latest: from [CodeIT](https://repo.codeit.guru/packages/centos/7/x86_64/) repository;
-- Apache Passenger module: Phusion Passenger Apache module to serve Ruby apps;
-- Composer: PHP dependency management;
-- MariaDB: stock version from `CentOS 7` repository;
-- MongoDB v3.6;
-- Microsoft SQL Server;
-- PHP: 5.4 stock version from `CentOS 7` repository;
-- PHP: 5.5, 5.6, 7.1, 7.2 from [Webtatic](https://webtatic.com/packages/php72/) repository;
-- PHP-FPM: 7.1, 7.2;
-- Ruby: 2.6.3 from RVM, together with `bundler` and `rails` gems;
+- [Apache](https://github.com/thtg88/vagrant-setup/blob/master/scripts/apache/apache.sh): stock version from `CentOS 7` repository;
+- [Apache latest](https://github.com/thtg88/vagrant-setup/blob/master/scripts/apache/http-2.sh): from [CodeIT](https://repo.codeit.guru/packages/centos/7/x86_64/) repository;
+- [Apache (with Passenger module)](https://github.com/thtg88/vagrant-setup/blob/master/scripts/apache/apache-passenger.sh): Phusion Passenger Apache module to serve Ruby apps;
+- [Composer](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/composer.sh): PHP dependency management;
+- [MariaDB](https://github.com/thtg88/vagrant-setup/blob/master/scripts/mariadb.sh): stock version from `CentOS 7` repository;
+- [MongoDB v3.6](https://github.com/thtg88/vagrant-setup/blob/master/scripts/mongodb-3-6.sh);
+- [Microsoft SQL Server](https://github.com/thtg88/vagrant-setup/blob/master/scripts/sql-server.sh);
+- PHP
+    - [5.4](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/5-4.sh) stock version from `CentOS 7` repository;
+    - [5.5](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/5-5.sh), [5.6](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/5-6.sh), [7.1](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/7-1.sh), [7.2](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/7-2.sh) from [Webtatic](https://webtatic.com/packages/php72/) repository;
+- PHP-FPM: [7.1](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/fpm-7-1.sh), [7.2](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/fpm-7-2.sh);
+- [Ruby](https://github.com/thtg88/vagrant-setup/blob/master/scripts/ruby/ruby.sh): 2.6.3 from RVM, together with `bundler` and `rails` gems;
 
 ## Examples
-You can find a few examples of Vagrant configurations in the `examples` folder.
+You can find a few examples of Vagrant configurations in the [`examples`](https://github.com/thtg88/vagrant-setup/tree/master/centos-7/examples) folder.
+
 These are all set up on a `CentOS 7` Linux distribution.
+
 Contained in this repository:
 
 - PHP 5.4 with stock Apache, MariaDB, and HTTPS configuration;
@@ -56,7 +59,7 @@ Contained in this repository:
 - PHP 7.2 with MariaDB, and HTTPS configurationL
     - Latest Apache from [CodeIT](https://repo.codeit.guru/packages/centos/7/x86_64/) repository, PHP-FPM, and MariaDB, together with HTTPS and HTTP/2 configuration out of the box;
     - Stock Apache, and PHP from [Webtatic](https://webtatic.com/packages/php72/) repository
-- Ruby: Ruby 2.6.3 from RVM latest stable, together with Rails, Apache and MariaDB. The Passenger Apache module is used to serve Ruby apps.
+- Ruby 2.6.3 from RVM latest stable, together with Rails, Apache and MariaDB. The Passenger Apache module is used to serve Ruby apps.
 
 ## Installation
 Make sure you have all the [requirements](#requirements) available before starting.
@@ -172,7 +175,9 @@ It must be an array of objects, each with the following attributes:
 ```
 
 ### `project_scripts`
-A list of shell scripts to execute for each of the projects. The path is relative to the `scripts` folder.
+A list of shell scripts to execute for each of the projects.
+
+The path is relative to the [`scripts`](https://github.com/thtg88/vagrant-setup/tree/master/scripts) folder.
 
 #### Example
 ```json
@@ -185,7 +190,9 @@ A list of shell scripts to execute for each of the projects. The path is relativ
 ```
 
 ### `provision_scripts`
-A list of shell scripts to execute when provisioning the guest machine (your VM). The path is relative to the `scripts` folder.
+A list of shell scripts to execute when provisioning the guest machine (your VM).
+
+The path is relative to the [`scripts`](https://github.com/thtg88/vagrant-setup/tree/master/scripts) folder.
 
 #### Example
 ```json
@@ -201,7 +208,9 @@ A list of shell scripts to execute when provisioning the guest machine (your VM)
 ```
 
 ### `synced_folders`
-An array of objects, indicating additional folders you want to synchronise with the guest machine (the VM). Every object supports the following:
+An array of objects, indicating additional folders you want to synchronise with the guest machine (the VM).
+
+Every object supports the following:
 
 | Attribute  | Type     | Required? | Description |
 | ---------- | -------- | --------- | ----------- |
