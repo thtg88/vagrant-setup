@@ -63,7 +63,8 @@ Contained in this repository:
 
 ## Installation
 Make sure you have all the [requirements](#requirements) available before starting.
-Clonse this repository:
+
+Clone this repository:
 ```bash
 git clone https://github.com/thtg88/vagrant-setup.git
 ```
