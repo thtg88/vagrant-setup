@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/) (or at lea
 ### Removed
 - `mod_ssl` in HTTP-only configuration
 
+## [5.0.0] - 2019-10-27
+### Added
+- Support for privileged provisioning scripts (with `provision_privileged_scripts`)
+### Changed
+- `provision_scripts` is now run as non-privileged (`privileged: false`)
+
 ## [4.0.0] - 2019-10-27
 ### Added
 - `Setup` class to re-use configuration
