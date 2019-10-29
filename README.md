@@ -43,6 +43,17 @@ This repository provides support for the following technologies via a [provision
 - PHP-FPM: [7.1](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/fpm-7-1.sh), [7.2](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/fpm-7-2.sh);
 - [Ruby](https://github.com/thtg88/vagrant-setup/blob/master/scripts/ruby/ruby.sh): 2.6.3 from RVM, together with `bundler` and `rails` gems;
 
+The [`base.sh`](https://github.com/thtg88/vagrant-setup/blob/master/scripts/base.sh) script will install some basic utilities:
+- bind-utils
+- epel-release
+- git
+- nano
+- net-tools
+- patch
+- unzip
+- wget
+- zip
+
 ## Examples
 You can find a few examples of Vagrant configurations in the [`examples`](https://github.com/thtg88/vagrant-setup/tree/master/centos-7/examples) folder.
 
