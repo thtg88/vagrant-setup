@@ -8,7 +8,7 @@ ACTUAL_SIGNATURE=$(php -r "echo hash_file('SHA384', 'composer-setup.php');")
 if [ "$EXPECTED_SIGNATURE" = "$ACTUAL_SIGNATURE" ]
 then
     php composer-setup.php --quiet
-    mv composer.phar /usr/local/bin/composer
+    sudo mv composer.phar /usr/local/bin/composer
 else
     >&2 echo 'ERROR: Invalid installer signature'
 fi
