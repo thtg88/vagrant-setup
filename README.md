@@ -70,7 +70,7 @@ git clone https://github.com/thtg88/vagrant-setup.git
 ```
 
 ## Usage
-From the root folder, create a `config.json` file (you can file an example in `config.json.example`), and run:
+From the root folder, create a `config.json` file (you can file an example in [`config.json.example`](https://github.com/thtg88/vagrant-setup/blob/master/config.json.example)), and run:
 ```bash
 vagrant up
 ```
