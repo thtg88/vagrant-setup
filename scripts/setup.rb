@@ -18,12 +18,15 @@ class Setup
     		end
     	end
 
-    	# Enable provisioning with a shell script. Additional provisioners such as
-    	# Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
-    	# documentation for more information about their specific syntax and use.
+    	# Enable provisioning with a shell script.
+        if settings.has_key?('provision_privileged_scripts')
+            settings['provision_privileged_scripts'].each do |provision_privileged_script|
+                config.vm.provision "shell", path: scripts_dir+"/"+provision_privileged_script
+            end
+        end
         if settings.has_key?('provision_scripts')
             settings['provision_scripts'].each do |provision_script|
-                config.vm.provision "shell", path: scripts_dir+"/"+provision_script
+                config.vm.provision "shell", path: scripts_dir+"/"+provision_script, privileged: false
             end
         end
 

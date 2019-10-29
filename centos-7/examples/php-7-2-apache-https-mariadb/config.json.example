@@ -40,12 +40,15 @@
         "apache/vhost/http-https.sh",
         "apache/vhost/ssl-certificate.sh"
     ],
-    "provision_scripts": [
+    "provision_privileged_scripts": [
         "base.sh",
         "apache/apache.sh",
         "php/7-2.sh",
         "php/composer.sh",
         "mariadb.sh"
+    ],
+    "provision_scripts": [
+        "php/composer.sh"
     ],
     "synced_folders": [
         {

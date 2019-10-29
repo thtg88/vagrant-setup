@@ -17,6 +17,8 @@ This repository provides a set of scripts to construct a local Vagrant developme
         - Example
     - [`project_scripts`](#project_scripts)
         - Example
+    - [`provision_privileged_scripts`](#provision_privileged_scripts)
+        - Example
     - [`provision_scripts`](#provision_scripts)
         - Example
     - [`synced_folders`](#synced_folders)
@@ -28,7 +30,7 @@ This repository provides a set of scripts to construct a local Vagrant developme
 - [VirtualBox](https://www.virtualbox.org/) >=5.2. While this setup may work with other hypervisors, it has not been tested against them and support is not provided for them;
 
 ## Technologies Provided
-This repository provides support for the following technologies via a [provisioning shell script](#provision_scripts) in a `CentOS 7` distribution:
+This repository provides support for the following technologies via a [provisioning shell script](#provision_privileged_scripts) in a `CentOS 7` distribution:
 
 - [Apache](https://github.com/thtg88/vagrant-setup/blob/master/scripts/apache/apache.sh): stock version from `CentOS 7` repository;
 - [Apache latest](https://github.com/thtg88/vagrant-setup/blob/master/scripts/apache/http-2.sh): from [CodeIT](https://repo.codeit.guru/packages/centos/7/x86_64/) repository;
@@ -201,7 +203,24 @@ The path is relative to the [`scripts`](https://github.com/thtg88/vagrant-setup/
 }
 ```
 
-### `provision_scripts`
+### `provision_privileged_scripts`
+A list of shell scripts to execute with elevated privileges when provisioning the guest machine (your VM).
+
+The path is relative to the [`scripts`](https://github.com/thtg88/vagrant-setup/tree/master/scripts) folder.
+
+#### Example
+```json
+{
+    "provision_privileged_scripts": [
+        "base.sh",
+        "apache/http-2.sh",
+        "php/fpm-7-2.sh",
+        "mariadb.sh"
+    ]
+}
+```
+
+## `provision_scripts`
 A list of shell scripts to execute when provisioning the guest machine (your VM).
 
 The path is relative to the [`scripts`](https://github.com/thtg88/vagrant-setup/tree/master/scripts) folder.
@@ -210,11 +229,7 @@ The path is relative to the [`scripts`](https://github.com/thtg88/vagrant-setup/
 ```json
 {
     "provision_scripts": [
-        "base.sh",
-        "apache/http-2.sh",
-        "php/fpm-7-2.sh",
         "php/composer.sh",
-        "mariadb.sh"
     ]
 }
 ```
