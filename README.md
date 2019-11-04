@@ -38,11 +38,13 @@ This repository provides support for the following technologies via a [provision
 - [Composer](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/composer.sh): PHP dependency management;
 - [MariaDB](https://github.com/thtg88/vagrant-setup/blob/master/scripts/mariadb.sh): stock version from `CentOS 7` repository;
 - [MongoDB v3.6](https://github.com/thtg88/vagrant-setup/blob/master/scripts/mongodb-3-6.sh);
+- [NodeJS](https://github.com/thtg88/vagrant-setup/blob/master/scripts/node-nvm.sh): v10.16.0 installed via NVM;
 - [Microsoft SQL Server](https://github.com/thtg88/vagrant-setup/blob/master/scripts/sql-server.sh);
 - PHP
     - [5.4](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/5-4.sh) stock version from `CentOS 7` repository;
     - [5.5](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/5-5.sh), [5.6](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/5-6.sh), [7.1](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/7-1.sh), [7.2](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/7-2.sh) from [Webtatic](https://webtatic.com/packages/php72/) repository;
 - PHP-FPM: [7.1](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/fpm-7-1.sh), [7.2](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/fpm-7-2.sh);
+- [PostgreSQL](https://github.com/thtg88/vagrant-setup/blob/master/scripts/postgresql.sh): stock version from `CentOS 7` repository;
 - [Ruby](https://github.com/thtg88/vagrant-setup/blob/master/scripts/ruby/ruby.sh): 2.6.3 from RVM, together with `bundler` and `rails` gems;
 
 The [`base.sh`](https://github.com/thtg88/vagrant-setup/blob/master/scripts/base.sh) script will install some basic utilities:
