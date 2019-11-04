@@ -27,9 +27,11 @@
     "provision_privileged_scripts": [
         "base.sh",
         "apache/apache-passenger.sh",
+        "postgresql.sh"
     ],
     "provision_scripts": [
         "ruby/ruby.sh",
+        "node-nvm.sh"
     ],
     "synced_folders": [
         {
