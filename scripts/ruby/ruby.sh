@@ -9,6 +9,9 @@ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703
 curl -sSL https://get.rvm.io | bash -s stable
 source /usr/local/rvm/scripts/rvm || source /etc/profile.d/rvm.sh
 
+# Make RVM available in shell
+source /home/vagrant/.rvm/scripts/rvm
+
 # Install Ruby 2.6.3 and set as default version
 rvm use --default --install 2.6.3
 
@@ -16,6 +19,3 @@ rvm use --default --install 2.6.3
 gem install bundler
 gem install rails
 rvm cleanup all
-
-# Change permissions to wrappers directory so "rails new app_name" works
-chown -R vagrant /usr/local/rvm/gems/ruby-2.6.3/wrappers
