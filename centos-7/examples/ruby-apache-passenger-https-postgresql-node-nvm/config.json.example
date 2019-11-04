@@ -27,7 +27,9 @@
     "provision_privileged_scripts": [
         "base.sh",
         "apache/apache-passenger.sh",
-        "ruby/ruby.sh"
+    ],
+    "provision_scripts": [
+        "ruby/ruby.sh",
     ],
     "synced_folders": [
         {
