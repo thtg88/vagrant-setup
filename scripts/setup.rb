@@ -8,7 +8,13 @@ class Setup
     	# boxes at https://atlas.hashicorp.com/search.
     	config.vm.box = "centos/7"
 
-    	# Create a forwarded port mapping which allows access to a specific port
+        # Set memory usage and number of CPUs for VirtualBox provider
+        config.vm.provider "virtualbox" do |v|
+    		v.memory = 2048
+    		v.cpus = 2
+    	end
+
+        # Create a forwarded port mapping which allows access to a specific port
     	# within the machine from a port on the host machine.
     	if settings.has_key?('forwarded_ports')
     		settings['forwarded_ports'].each do |forwarded_port|
