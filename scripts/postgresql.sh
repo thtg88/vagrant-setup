@@ -22,7 +22,7 @@ host all all 10.0.2.2/24 trust
 EOF
 
 # Listen connections from all addresses
-sed -i 's"^#listen_addresses = ''localhost''.*$"listen_addresses = ''*''"' /var/lib/pgsql/data/postgresql.conf
+sed -i "s/^#listen_addresses =.*$/listen_addresses = '*'/" /var/lib/pgsql/data/postgresql.conf
 
 # Restart
 systemctl restart postgresql
