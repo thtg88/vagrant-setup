@@ -12,3 +12,6 @@ systemctl start postgresql
 
 # Configure PostgreSQL to start on boot
 systemctl enable postgresql
+
+# Create vagrant postgres superuser
+sudo -u postgres createuser -s vagrant
