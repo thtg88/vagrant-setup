@@ -1,6 +1,11 @@
 {
     "forwarded_ports": [
         {
+            "guest": 5432,
+            "host": 54320,
+            "name": "PostgreSQL"
+        },
+        {
             "guest": 80,
             "host": 8800,
             "name": "HTTP"
