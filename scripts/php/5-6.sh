@@ -6,7 +6,7 @@
 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
 # Install PHP 5.6 (from webtatic repo) and its extensions
-yum -y install php56w php56w-opcache php56w-bcmath php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-intl php56w-mbstring php56w-soap
+yum -y install php56w php56w-opcache php56w-bcmath php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-intl php56w-mbstring php56w-soap php56w-pgsql
 
 # Create PHP Session folder and enable writing access
 mkdir -p /var/lib/php/session

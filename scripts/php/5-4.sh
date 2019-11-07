@@ -3,7 +3,7 @@
 # Install and Configure PHP 5.4
 
 # Install PHP 5.4 (default CentOS PHP version) and its extensions
-yum -y install php php-bcmath php-xml php-mcrypt php-gd php-devel php-mysql php-intl php-mbstring php-soap
+yum -y install php php-bcmath php-xml php-mcrypt php-gd php-devel php-mysql php-intl php-mbstring php-soap php-pgsql
 
 # Create PHP Session folder and enable writing access
 mkdir -p /var/lib/php/session
