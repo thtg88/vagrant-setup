@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/) (or at lea
 ### Removed
 - `mod_ssl` in HTTP-only configuration
 
+## [5.2.0] - 2019-11-08
+### Changed
+- Apache vhost configuration file always points to `public` folder
+
 ## [5.1.0] - 2019-11-08
 ### Added
 - Default memory and CPUs usage
