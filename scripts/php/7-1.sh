@@ -6,7 +6,7 @@
 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 
 # Install PHP 7.1 (from webtatic repo) and its extensions
-yum -y install php71w php71w-opcache php71w-bcmath php71w-xml php71w-mcrypt php71w-gd php71w-devel php71w-mysql php71w-intl php71w-mbstring php71w-soap
+yum -y install php71w php71w-opcache php71w-bcmath php71w-xml php71w-mcrypt php71w-gd php71w-devel php71w-mysql php71w-intl php71w-mbstring php71w-soap php71w-pgsql
 
 # Create PHP Session folder and enable writing access
 mkdir -p /var/lib/php/session
