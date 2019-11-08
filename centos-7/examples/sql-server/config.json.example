@@ -1,0 +1,22 @@
+{
+    "forwarded_ports": [
+        {
+            "guest": 1433,
+            "host": 14330,
+            "name": "SQL Server"
+        }
+    ],
+    "projects": [],
+    "project_scripts": [],
+    "provision_privileged_scripts": [
+        "sql-server.sh"
+    ],
+    "provision_scripts": [],
+    "synced_folders": [
+        {
+            "guest": "/vagrant",
+            "host": ".",
+            "disabled": true
+        }
+    ]
+}
