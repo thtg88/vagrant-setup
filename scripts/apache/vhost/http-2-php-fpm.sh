@@ -10,9 +10,9 @@ then
     # Create .conf file
     cat > /etc/httpd/sites-available/$1.conf <<EOF
 <VirtualHost *:80>
-    DocumentRoot "/var/www/vhosts/$1"
+    DocumentRoot "/var/www/vhosts/$1/public"
     ServerName $1.localhost
-    <Directory "/var/www/vhosts/$1">
+    <Directory "/var/www/vhosts/$1/public">
         Options -Indexes +FollowSymLinks +MultiViews
         AllowOverride All
         Order allow,deny
@@ -25,9 +25,9 @@ then
 </VirtualHost>
 <VirtualHost *:443>
     Protocols h2 http/1.1
-    DocumentRoot "/var/www/vhosts/$1"
+    DocumentRoot "/var/www/vhosts/$1/public"
     ServerName $1.localhost
-    <Directory "/var/www/vhosts/$1">
+    <Directory "/var/www/vhosts/$1/public">
         Options -Indexes +FollowSymLinks +MultiViews
         AllowOverride All
         Order allow,deny
@@ -37,7 +37,7 @@ then
     </Directory>
     IndexOptions
     DirectoryIndex index.php index.html
-    ProxyPassMatch ^/(.*\.php)$ fcgi://127.0.0.1:9000/var/www/vhosts/$1/\$1
+    ProxyPassMatch ^/(.*\.php)$ fcgi://127.0.0.1:9000/var/www/vhosts/$1/public/\$1
     SSLEngine on
     SSLCertificateFile "/var/www/certificates/$1.localhost.crt"
     SSLCertificateKeyFile "/var/www/certificates/$1.localhost.key"
