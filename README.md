@@ -74,7 +74,8 @@ Contained in this repository:
 - PHP 7.2 with MariaDB, and HTTPS configurationL
     - Latest Apache from [CodeIT](https://repo.codeit.guru/packages/centos/7/x86_64/) repository, PHP-FPM, and MariaDB, together with HTTPS and HTTP/2 configuration out of the box;
     - Stock Apache, and PHP from [Webtatic](https://webtatic.com/packages/php72/) repository
-- Ruby 2.6.3 from RVM latest stable, together with Rails, Apache and MariaDB. The Passenger Apache module is used to serve Ruby apps.
+- Ruby 2.6.3 from RVM latest stable, together with Rails, Apache, Node (via NVM) and PostgreSQL. The Passenger Apache module is used to serve Ruby apps.
+- SQL Server;
 
 ## Installation
 Make sure you have all the [requirements](#requirements) available before starting.

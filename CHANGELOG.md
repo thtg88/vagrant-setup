@@ -16,6 +16,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/) (or at lea
 ### Removed
 - `mod_ssl` in HTTP-only configuration
 
+## [5.1.0] - 2019-11-08
+### Added
+- Default memory and CPUs usage
+- PostgreSQL support
+- PostgreSQL PHP bindings packages
+- Node via NVM support
+- **[Ruby]**: Added PostgreSQL and Node support to example
+- SQL Server example
+### Changed
+- **[Ruby]**: Moved to non-privileged script
+- **[Ruby]**: Renamed example
+### Fixed
+- **[Ruby]**: Apache Phusion Passenger after moving Ruby setup to unprivileged script
+### Removed
+- **[Ruby]**: MySQL support from example
+
 ## [5.0.0] - 2019-10-27
 ### Added
 - Support for privileged provisioning scripts (with `provision_privileged_scripts`)
