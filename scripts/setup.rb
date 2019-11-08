@@ -10,7 +10,7 @@ class Setup
 
         # Set memory usage and number of CPUs for VirtualBox provider
         config.vm.provider "virtualbox" do |v|
-    		v.memory = 2048
+    		v.memory = 3072
     		v.cpus = 2
     	end
 
