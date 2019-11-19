@@ -16,6 +16,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/) (or at lea
 ### Removed
 - `mod_ssl` in HTTP-only configuration
 
+## [5.3.0] - 2019-11-19
+### Added
+- **[SQL Server]**: Added inline setup script
+### Changed
+- **[SQL Server]**: Setup script now installs development tools
+- **[Apache]**: Restart service on boot only if Apache is included in configuration
+### Fixed
+- **[PostgreSQL]**: Configuration setup
+### Removed
+- **[PHP]**: PHP-FPM 7.1 setup
+
 ## [5.2.0] - 2019-11-08
 ### Changed
 - Apache vhost configuration file always points to `public` folder
