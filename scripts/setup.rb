@@ -10,7 +10,14 @@ class Setup
 
         # Set memory usage and number of CPUs for VirtualBox provider
         config.vm.provider "virtualbox" do |v|
-    		v.memory = 3072
+            # If installing SQL server, use 3GB required
+            # (2GB required by SQL Server plus some room)
+            # Otherwise use 2GB
+            if settings.has_key?('provision_privileged_scripts') && settings['provision_privileged_scripts'].include?('sql-server.sh')
+                v.memory = 3072
+            else
+                v.memory = 2048
+            end
     		v.cpus = 2
     	end
 
