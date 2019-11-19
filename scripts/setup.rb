@@ -99,8 +99,23 @@ class Setup
     		end
     	end
 
-    	# Restart Apache
-    	config.vm.provision "shell", inline: 'systemctl restart httpd.service', run: "always"
+        if settings.has_key?('provision_privileged_scripts')
+            # Scripts that require Apache restart
+            apache_scripts = [
+                'apache/apache.sh',
+                'apache/apache-passenger.sh',
+                'apache/http-2.sh'
+            ]
+
+            # Apache scripts used are the intersection of all the Apache scripts
+            # and the provision privileged scripts
+            apache_scripts_used = apache_scripts & settings['provision_privileged_scripts']
+
+            # Restart Apache if I'm using Apache scripts
+            if apache_scripts_used.length > 0
+                config.vm.provision "shell", inline: 'systemctl restart httpd.service', run: "always"
+            end
+        end
     end
 
     def self.backup_mysql(config, database, username, password, dir)
