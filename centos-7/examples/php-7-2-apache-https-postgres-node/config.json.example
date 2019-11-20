@@ -1,0 +1,53 @@
+{
+    "forwarded_ports": [
+      {
+          "guest": 5432,
+          "host": 54320,
+          "name": "PostgreSQL"
+      },
+        {
+            "guest": 80,
+            "host": 8800,
+            "name": "HTTP"
+        },
+        {
+            "guest": 443,
+            "host": 8443,
+            "name": "HTTPS"
+        }
+    ],
+    "projects": [
+        {
+            "name": "api.acme.com",
+            "synced_folder": {
+                "guest": "/var/www/vhosts/api.acme.com",
+                "host": "~/Documents/web-projects/api.acme.com"
+            }
+        }
+    ],
+    "project_scripts": [
+        "apache/vhost/http-https.sh",
+        "apache/vhost/ssl-certificate.sh"
+    ],
+    "provision_privileged_scripts": [
+        "base.sh",
+        "apache/apache.sh",
+        "php/7-2.sh",
+        "php/composer.sh",
+        "postgresql.sh"
+    ],
+    "provision_scripts": [
+        "node-nvm.sh"
+    ],
+    "synced_folders": [
+        {
+            "guest": "/vagrant",
+            "host": ".",
+            "disabled": true
+        },
+        {
+            "guest": "/opt/library",
+            "host": "~/Documents/web-projects/library"
+        }
+    ]
+}
