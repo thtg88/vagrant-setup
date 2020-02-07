@@ -6,7 +6,7 @@ class Setup
 
         # Every Vagrant development environment requires a box. You can search for
     	# boxes at https://atlas.hashicorp.com/search.
-    	config.vm.box = "centos/7"
+    	config.vm.box = settings['box']
 
         # Set memory usage and number of CPUs for VirtualBox provider
         config.vm.provider "virtualbox" do |v|
