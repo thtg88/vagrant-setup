@@ -1,4 +1,5 @@
 {
+    "box": "centos/7",
     "forwarded_ports": [
         {
             "guest": 1433,
