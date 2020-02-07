@@ -6,7 +6,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/) (or at lea
 
 ## Unreleased
 ### Added
-- Choose box to provision
 - Clear unused vhosts
 - Configure cron jobs
 - Copy database from remote server
@@ -15,6 +14,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/) (or at lea
 - Support for public and private SSH keys
 ### Removed
 - `mod_ssl` in HTTP-only configuration
+
+## [6.0.0] - 2020-02-07
+### Added
+- Choose box to provision
 
 ## [5.3.0] - 2019-11-19
 ### Added

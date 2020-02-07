@@ -9,6 +9,7 @@ This repository provides a set of scripts to construct a local Vagrant developme
 - [Installation](#installation)
 - [Usage](#usage)
 - [Configuration](#configuration)
+    - [`box`](#box)
     - [`forwarded_ports`](#forwarded_ports)
         - [`database` Backup Configuration](#database-backup-configuration)
         - [`synced_folder` Configuration](#synced_folder-configuration)
@@ -61,7 +62,7 @@ The [`base.sh`](https://github.com/thtg88/vagrant-setup/blob/master/scripts/base
 ## Examples
 You can find a few examples of Vagrant configurations in the [`examples`](https://github.com/thtg88/vagrant-setup/tree/master/centos-7/examples) folder.
 
-These are all set up on a `CentOS 7` Linux distribution.
+These are all set up on a `CentOS 7` or a `CentOS 8` Linux distribution.
 
 Contained in this repository:
 
@@ -71,7 +72,7 @@ Contained in this repository:
     - With basic HTTP configuration;
     - Dynamic HTTPS self-signed certificate configuration
 - PHP 7.1 with latest Apache from [CodeIT](https://repo.codeit.guru/packages/centos/7/x86_64/) repository, PHP-FPM and MariaDB, together with HTTPS and HTTP/2 configuration out of the box;
-- PHP 7.2 with MariaDB, and HTTPS configurationL
+- PHP 7.2 with MariaDB, and HTTPS configuration (this is the only configuration available on CentOS 7 and CentOS 8):
     - Latest Apache from [CodeIT](https://repo.codeit.guru/packages/centos/7/x86_64/) repository, PHP-FPM, and MariaDB, together with HTTPS and HTTP/2 configuration out of the box;
     - Stock Apache, and PHP from [Webtatic](https://webtatic.com/packages/php72/) repository
 - Ruby 2.6.3 from RVM latest stable, together with Rails, Apache, Node (via NVM) and PostgreSQL. The Passenger Apache module is used to serve Ruby apps.
@@ -93,6 +94,17 @@ vagrant up
 
 ## Configuration
 The `config.json` file can contain the following options:
+
+### `box`
+Specify which Vagrant box you'd like installed.
+Only the values `centos/7` and `centos/8` are supported or tested.
+
+#### Example
+```json
+{
+    "box": "centos/7"
+}
+```
 
 ### `forwarded_ports`
 Provides port-mapping from host machine to guest (the actual VM).
