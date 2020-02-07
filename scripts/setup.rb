@@ -8,6 +8,26 @@ class Setup
     	# boxes at https://atlas.hashicorp.com/search.
     	config.vm.box = settings['box']
 
+        # CentOS 8 Vagrant box seems to be still locked on version 8.0
+        # This causes provisioning to fail with error:
+        # - yum install -y kernel-devel-`uname -r` --enablerepo=C*-base --enablerepo=C*-updates
+        # - Stderr from the command:
+        # - Error: Unknown repo: 'C*-base'
+        # By explicitly specifying the URL of the repo,
+        # we force the installation of version 8.1
+        # which does not seem to use this command
+        # Using the CentOS 8.1 .box file sidesteps this issue
+        # since has_kernel_devel_info will be true and the above yum command
+        # which uses --enablerepo=C*-base --enablerepo=C*-updates
+        # will not be called.
+        # See https://github.com/dotless-de/vagrant-vbguest/issues/367#issuecomment-581360264
+        # If you have installed the centos/8 box before,
+        # Make sure to remove it with:
+        # vagrant box remove centos/8
+        if settings['box'] == 'centos/8'
+            config.vm.box_url = "https://cloud.centos.org/centos/8/x86_64/images/CentOS-8-Vagrant-8.1.1911-20200113.3.x86_64.vagrant-virtualbox.box"
+        end
+
         # Set memory usage and number of CPUs for VirtualBox provider
         config.vm.provider "virtualbox" do |v|
             # If installing SQL server, use 3GB required

@@ -1,11 +1,11 @@
 {
     "box": "centos/7",
     "forwarded_ports": [
-      {
-          "guest": 5432,
-          "host": 54320,
-          "name": "PostgreSQL"
-      },
+        {
+            "guest": 5432,
+            "host": 54320,
+            "name": "PostgreSQL"
+        },
         {
             "guest": 80,
             "host": 8800,
