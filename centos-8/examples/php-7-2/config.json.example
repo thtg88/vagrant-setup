@@ -10,7 +10,7 @@
     "projects": [],
     "project_scripts": [],
     "provision_privileged_scripts": [
-        "sql-server.sh"
+        "base.sh"
     ],
     "provision_scripts": [],
     "synced_folders": [
