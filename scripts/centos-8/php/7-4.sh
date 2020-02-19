@@ -10,7 +10,7 @@ dnf module reset php
 dnf module enable -y php:remi-7.4
 
 # Install PHP and its extensions
-dnf install -y php php-opcache php-bcmath php-xml php-gd php-mysqlnd php-intl php-mbstring php-soap php-pgsql
+dnf install -y php php-opcache php-bcmath php-xml php-gd php-mysqlnd php-intl php-mbstring php-soap php-pgsql php-zip
 
 # Start the FPM service and enable it to automatically start on boot
 systemctl enable --now php-fpm

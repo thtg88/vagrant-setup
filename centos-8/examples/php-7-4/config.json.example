@@ -6,7 +6,8 @@
     "provision_privileged_scripts": [
         "base.sh",
         "apache/apache.sh",
-        "centos-8/php/7-4.sh"
+        "centos-8/php/7-4.sh",
+        "php/composer.sh"
     ],
     "provision_scripts": [],
     "synced_folders": [
