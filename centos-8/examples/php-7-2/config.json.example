@@ -10,7 +10,9 @@
     "projects": [],
     "project_scripts": [],
     "provision_privileged_scripts": [
-        "sql-server.sh"
+        "base.sh",
+        "apache/apache.sh",
+        "centos-8/php/7-2.sh"
     ],
     "provision_scripts": [],
     "synced_folders": [
