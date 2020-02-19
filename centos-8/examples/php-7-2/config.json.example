@@ -1,12 +1,6 @@
 {
     "box": "centos/8",
-    "forwarded_ports": [
-        {
-            "guest": 1433,
-            "host": 14330,
-            "name": "SQL Server"
-        }
-    ],
+    "forwarded_ports": [],
     "projects": [],
     "project_scripts": [],
     "provision_privileged_scripts": [
