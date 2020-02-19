@@ -8,9 +8,6 @@ yum -y install php php-opcache php-bcmath php-xml php-gd php-devel php-mysqlnd p
 # Start the FPM service and enable it to automatically start on boot
 systemctl enable --now php-fpm
 
-# Restart Apache
-systemctl restart httpd
-
 # Set display_errors = On
 sed -i 's"^display_errors =.*$"display_errors = On"' /etc/php.ini
 
@@ -25,3 +22,6 @@ sed -i 's"^;date\.timezone =.*$"date.timezone = Europe/London"' /etc/php.ini
 
 # Set sendmail_path = /usr/sbin/ssmtp -t
 sed -i 's"^sendmail_path =.*$"sendmail_path = /usr/sbin/ssmtp -t"' /etc/php.ini
+
+# Restart Apache
+systemctl restart httpd
