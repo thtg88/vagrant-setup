@@ -15,6 +15,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/) (or at lea
 ### Removed
 - `mod_ssl` in HTTP-only configuration
 
+## [6.1.0] - 2020-02-19
+### Added
+- CentOS 8 PHP 7.4 installation and configuration script
+- CentOS 8 PHP 7.4 example (from Remi repository)
+- CentOS 8 PHP 7.2 example (from default repository)
+
 ## [6.0.0] - 2020-02-07
 ### Added
 - Choose box to provision

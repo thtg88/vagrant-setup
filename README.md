@@ -47,6 +47,9 @@ This repository provides support for the following technologies via a [provision
 - PHP-FPM: [7.1](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/fpm-7-1.sh), [7.2](https://github.com/thtg88/vagrant-setup/blob/master/scripts/php/fpm-7-2.sh);
 - [PostgreSQL](https://github.com/thtg88/vagrant-setup/blob/master/scripts/postgresql.sh): stock version from `CentOS 7` repository;
 - [Ruby](https://github.com/thtg88/vagrant-setup/blob/master/scripts/ruby/ruby.sh): 2.6.3 from RVM, together with `bundler` and `rails` gems;
+- CentOS 8:
+    - [PHP 7.2](https://github.com/thtg88/vagrant-setup/blob/master/scripts/centos-8/php/7-2.sh) from the default CentOS 8 repository
+    - [PHP 7.4](https://github.com/thtg88/vagrant-setup/blob/master/scripts/centos-8/php/7-4.sh) from the Remi repository
 
 The [`base.sh`](https://github.com/thtg88/vagrant-setup/blob/master/scripts/base.sh) script will install some basic utilities:
 - bind-utils
