@@ -1,0 +1,25 @@
+{
+    "box": "centos/8",
+    "forwarded_ports": [
+        {
+            "guest": 1433,
+            "host": 14330,
+            "name": "SQL Server"
+        }
+    ],
+    "projects": [],
+    "project_scripts": [],
+    "provision_privileged_scripts": [
+        "base.sh",
+        "apache/apache.sh",
+        "centos-8/php/7-4.sh"
+    ],
+    "provision_scripts": [],
+    "synced_folders": [
+        {
+            "guest": "/vagrant",
+            "host": ".",
+            "disabled": true
+        }
+    ]
+}
